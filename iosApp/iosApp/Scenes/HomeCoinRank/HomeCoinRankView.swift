@@ -30,6 +30,7 @@ struct HomeCoinRankView: View {
                 // MARK: CoinList Section View
                 coinListDefaultDisplay()
             }
+            .padding()
         }
         .refreshable {
             resetSearch()
@@ -133,6 +134,8 @@ extension HomeCoinRankView {
     @ViewBuilder
     private func coinListDefaultDisplay() -> some View {
         // List When Home Normal Display
+        
+//        viewModel.coinsState.coins, viewModel.mockCoins
         ForEach(viewModel.coinsState.coins, id: \.self) { coin in
             CoinItemView(item: coin) {
                 print("Click open Coin Detail")

@@ -14,10 +14,10 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.stateIn
 
 open class CoinsViewModel: ViewModel() {
-    val _coinsState: MutableStateFlow<CoinsState> = MutableStateFlow<CoinsState>(viewModelScope, CoinsState())
+    private val _coinsState: MutableStateFlow<CoinsState> = MutableStateFlow(viewModelScope, CoinsState())
 
     @NativeCoroutinesState
-    val coinsState: StateFlow<CoinsState> get() = _coinsState.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), CoinsState())
+    val coinsState: StateFlow<CoinsState>  = _coinsState.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), CoinsState())
 
     val coinRankOne: Coin = Coin(
         "https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg",
@@ -56,13 +56,13 @@ open class CoinsViewModel: ViewModel() {
         viewModelScope.coroutineScope.launch {
             val fetchedCoins = fetchCoins()
             delay(500)
-            _coinsState.value = CoinsState(coins = fetchedCoins)
+            _coinsState.value = _coinsState.value.copy(coins = fetchedCoins) //CoinsState(coins = fetchedCoins)
         }
     }
 
     private suspend fun fetchCoins(): List<Coin> = mockCoins
 
-    private val mockCoins = listOf(
+    val mockCoins: List<Coin> = listOf(
         coinRankOne,
         coinRankTwo,
         coinRankThree
