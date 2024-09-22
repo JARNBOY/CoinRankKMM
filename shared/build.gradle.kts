@@ -3,6 +3,8 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kmp.nativecoroutines)
+    id("com.google.devtools.ksp") version "2.0.20-1.0.24"
 }
 
 kotlin {
@@ -27,39 +29,28 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                //put your multiplatform dependencies here
-                implementation(libs.kotlinx.coroutines.core)
-            }
+        all {
+            languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
+            languageSettings.optIn("kotlinx.cinterop.ExperimentalForeignApi")
         }
 
-        val androidMain by getting {
-            dependencies {
-                implementation(libs.androidx.lifecycle.viewmodel.ktx)
-            }
+        commonMain.dependencies {
+            //put your multiplatform dependencies here
+            implementation(libs.kotlinx.coroutines.core)
+            api(libs.kmp.observableviewmodel.core)
         }
 
-        val iosX64Main by getting
-        val iosArm64Main by getting
-        val iosSimulatorArm64Main by getting
-        val iosMain by creating {
-            dependsOn(commonMain)
-            iosX64Main.dependsOn(this)
-            iosArm64Main.dependsOn(this)
-            iosSimulatorArm64Main.dependsOn(this)
-
-            dependencies {
-
-            }
+        androidMain.dependencies {
+            implementation(libs.androidx.lifecycle.viewmodel.ktx)
         }
 
-        val commonTest by getting {
-            dependencies {
-                implementation(libs.kotlin.test)
-            }
+        iosMain.dependencies {
+
         }
 
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+        }
     }
 }
 
@@ -73,4 +64,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+dependencies {
+    implementation(project(":shared"))
 }

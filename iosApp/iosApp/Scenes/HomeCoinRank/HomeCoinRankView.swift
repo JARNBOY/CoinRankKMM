@@ -7,10 +7,15 @@
 //
 import Combine
 import SwiftUI
+import shared
+import KMPNativeCoroutinesAsync
+import KMPObservableViewModelSwiftUI
 
 struct HomeCoinRankView: View {
     @State private var searchText: String = ""
     @FocusState private var searchTextFieldIsFocused: Bool
+    
+    @StateViewModel var viewModel = CoinsViewModel()
     
     var body: some View {
         ScrollView(.vertical) {
@@ -19,12 +24,18 @@ struct HomeCoinRankView: View {
                 searchView()
                 Divider()
                 
-                // MARK: Search Section View
-                
                 // MARK: Top 3 Section View
+                topThreeCoinView()
                 
                 // MARK: CoinList Section View
+                coinListDefaultDisplay()
             }
+        }
+        .refreshable {
+            resetSearch()
+        }
+        .onAppear {
+            self.viewModel.getCoins()
         }
     }
     
@@ -103,20 +114,31 @@ extension HomeCoinRankView {
             }
 
             HStack(spacing: 8) {
-                
-//                // Rank One
-//                TopRankCoinItemView(item: coinRankOne, onClick: {
-////                    viewModel.requestCoinDetail(uuid: coinRankOne.uuid)
-//                })
-//                // Rank Two
-//                TopRankCoinItemView(item: coinRankTwo, onClick: {
-////                    viewModel.requestCoinDetail(uuid: coinRankTwo.uuid)
-//                })
-//                // Rank Three
-//                TopRankCoinItemView(item: coinRankThree, onClick: {
-////                    viewModel.requestCoinDetail(uuid: coinRankThree.uuid)
-//                })
+                // Rank One
+                TopRankCoinItemView(item: viewModel.coinRankOne, onClick: {
+//                    viewModel.requestCoinDetail(uuid: coinRankOne.uuid)
+                })
+                // Rank Two
+                TopRankCoinItemView(item: viewModel.coinRankTwo, onClick: {
+//                    viewModel.requestCoinDetail(uuid: coinRankTwo.uuid)
+                })
+                // Rank Three
+                TopRankCoinItemView(item: viewModel.coinRankThree, onClick: {
+//                    viewModel.requestCoinDetail(uuid: coinRankThree.uuid)
+                })
             }
+        }
+    }
+    
+    @ViewBuilder
+    private func coinListDefaultDisplay() -> some View {
+        // List When Home Normal Display
+        ForEach(viewModel.coinsState.coins, id: \.self) { coin in
+            CoinItemView(item: coin) {
+                print("Click open Coin Detail")
+//                        viewModel.requestCoinDetail(uuid: coin.uuid)
+            }
+            .id(coin.uuid)
         }
     }
 }

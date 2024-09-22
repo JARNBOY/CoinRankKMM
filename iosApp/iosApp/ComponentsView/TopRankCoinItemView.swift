@@ -9,12 +9,13 @@
 import SwiftUI
 import SDWebImageSwiftUI
 import SDWebImageSVGCoder
+import shared
 
 struct TopRankCoinItemView: View {
-    let item: CoinItemModel
+    let item: Coin
     private var onClick: () -> ()
     
-    init(item: CoinItemModel, onClick: @escaping () -> ()) {
+    init(item: Coin, onClick: @escaping () -> ()) {
         self.item = item
         self.onClick = onClick
     }

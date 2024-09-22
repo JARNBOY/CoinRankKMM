@@ -7,9 +7,10 @@ androidx-activityCompose = "1.8.0"
 navigationCompose = "2.8.1"
 navigationRuntimeKtx = "2.8.1"
 coilCompose = "2.5.0"
-kotlinxCoroutinesCore = "1.7.3"
+kotlinxCoroutinesCore = "1.9.0"
 lifecycleViewmodelKtx = "2.6.2"
-
+rickclephasKMPNativecoroutines = "1.0.0-ALPHA-35"
+kmp-observableviewmodel = "1.0.0-BETA-5"
 
 [libraries]
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
@@ -25,6 +26,8 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigationRuntimeKtx" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 
+kmp-observableviewmodel-core = { group = "com.rickclephas.kmp", name = "kmp-observableviewmodel-core", version.ref = "kmp-observableviewmodel" }
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
@@ -32,3 +35,4 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kmp-nativecoroutines = { id = "com.rickclephas.kmp.nativecoroutines", version.ref = "rickclephasKMPNativecoroutines" }

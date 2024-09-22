@@ -32,6 +32,15 @@
 		FBBB7C012C9FDD4400FA5071 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FBBB7C002C9FDD4400FA5071 /* SDWebImageSwiftUI */; };
 		FBBB7C042C9FDD8600FA5071 /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = FBBB7C032C9FDD8600FA5071 /* SDWebImageSVGCoder */; };
 		FBBB7C062C9FDDC700FA5071 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7C052C9FDDC700FA5071 /* View.swift */; };
+		FBBB7C112CA029EC00FA5071 /* CoinItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7C102CA029EC00FA5071 /* CoinItemView.swift */; };
+		FBBB7C142CA031F200FA5071 /* KMPNativeCoroutinesAsync in Frameworks */ = {isa = PBXBuildFile; productRef = FBBB7C132CA031F200FA5071 /* KMPNativeCoroutinesAsync */; };
+		FBBB7C162CA031F200FA5071 /* KMPNativeCoroutinesCombine in Frameworks */ = {isa = PBXBuildFile; productRef = FBBB7C152CA031F200FA5071 /* KMPNativeCoroutinesCombine */; };
+		FBBB7C182CA031F200FA5071 /* KMPNativeCoroutinesCore in Frameworks */ = {isa = PBXBuildFile; productRef = FBBB7C172CA031F200FA5071 /* KMPNativeCoroutinesCore */; };
+		FBBB7C1A2CA031F200FA5071 /* KMPNativeCoroutinesRxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FBBB7C192CA031F200FA5071 /* KMPNativeCoroutinesRxSwift */; };
+		FBBB7C1D2CA03E7D00FA5071 /* KMPObservableViewModelCore in Frameworks */ = {isa = PBXBuildFile; productRef = FBBB7C1C2CA03E7D00FA5071 /* KMPObservableViewModelCore */; };
+		FBBB7C1F2CA03E7E00FA5071 /* KMPObservableViewModelSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FBBB7C1E2CA03E7E00FA5071 /* KMPObservableViewModelSwiftUI */; };
+		FBBB7C212CA0442500FA5071 /* KMPObservableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7C202CA0442500FA5071 /* KMPObservableViewModel.swift */; };
+		FBBB7C232CA0553800FA5071 /* HomeCoinRankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7C222CA0553800FA5071 /* HomeCoinRankViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +80,9 @@
 		FBBB7BF42C9FD7D000FA5071 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		FBBB7BF62C9FD7E300FA5071 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FBBB7C052C9FDDC700FA5071 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		FBBB7C102CA029EC00FA5071 /* CoinItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinItemView.swift; sourceTree = "<group>"; };
+		FBBB7C202CA0442500FA5071 /* KMPObservableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMPObservableViewModel.swift; sourceTree = "<group>"; };
+		FBBB7C222CA0553800FA5071 /* HomeCoinRankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoinRankViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +92,14 @@
 			files = (
 				FBBB7C012C9FDD4400FA5071 /* SDWebImageSwiftUI in Frameworks */,
 				FBBB7BFE2C9FDCAE00FA5071 /* SDWebImageMapKit in Frameworks */,
+				FBBB7C182CA031F200FA5071 /* KMPNativeCoroutinesCore in Frameworks */,
+				FBBB7C1A2CA031F200FA5071 /* KMPNativeCoroutinesRxSwift in Frameworks */,
 				FBBB7BFC2C9FDCAE00FA5071 /* SDWebImage in Frameworks */,
+				FBBB7C1F2CA03E7E00FA5071 /* KMPObservableViewModelSwiftUI in Frameworks */,
+				FBBB7C162CA031F200FA5071 /* KMPNativeCoroutinesCombine in Frameworks */,
+				FBBB7C142CA031F200FA5071 /* KMPNativeCoroutinesAsync in Frameworks */,
 				FBBB7C042C9FDD8600FA5071 /* SDWebImageSVGCoder in Frameworks */,
+				FBBB7C1D2CA03E7D00FA5071 /* KMPObservableViewModelCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				FBBB7BCB2C9FA83800FA5071 /* HomeCoinRankView.swift */,
+				FBBB7C222CA0553800FA5071 /* HomeCoinRankViewModel.swift */,
 			);
 			path = HomeCoinRank;
 			sourceTree = "<group>";
@@ -200,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
+				FBBB7C202CA0442500FA5071 /* KMPObservableViewModel.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -247,6 +267,7 @@
 			children = (
 				FBBB7BED2C9FD65E00FA5071 /* TopRankCoinItemView.swift */,
 				FBBB7BF22C9FD7A200FA5071 /* ChangeVolumeTextView.swift */,
+				FBBB7C102CA029EC00FA5071 /* CoinItemView.swift */,
 			);
 			path = ComponentsView;
 			sourceTree = "<group>";
@@ -292,6 +313,12 @@
 				FBBB7BFD2C9FDCAE00FA5071 /* SDWebImageMapKit */,
 				FBBB7C002C9FDD4400FA5071 /* SDWebImageSwiftUI */,
 				FBBB7C032C9FDD8600FA5071 /* SDWebImageSVGCoder */,
+				FBBB7C132CA031F200FA5071 /* KMPNativeCoroutinesAsync */,
+				FBBB7C152CA031F200FA5071 /* KMPNativeCoroutinesCombine */,
+				FBBB7C172CA031F200FA5071 /* KMPNativeCoroutinesCore */,
+				FBBB7C192CA031F200FA5071 /* KMPNativeCoroutinesRxSwift */,
+				FBBB7C1C2CA03E7D00FA5071 /* KMPObservableViewModelCore */,
+				FBBB7C1E2CA03E7E00FA5071 /* KMPObservableViewModelSwiftUI */,
 			);
 			productName = iosApp;
 			productReference = 7555FF7B242A565900829871 /* iosApp.app */;
@@ -325,6 +352,8 @@
 				FBBB7BFA2C9FDCAE00FA5071 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				FBBB7BFF2C9FDD4400FA5071 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				FBBB7C022C9FDD8600FA5071 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
+				FBBB7C122CA031F200FA5071 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */,
+				FBBB7C1B2CA03E7D00FA5071 /* XCRemoteSwiftPackageReference "KMP-ObservableViewModel" */,
 			);
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
 			projectDirPath = "";
@@ -375,7 +404,9 @@
 			files = (
 				FBBB7BF12C9FD6CC00FA5071 /* Fonts.swift in Sources */,
 				FBBB7BF32C9FD7A200FA5071 /* ChangeVolumeTextView.swift in Sources */,
+				FBBB7C112CA029EC00FA5071 /* CoinItemView.swift in Sources */,
 				FBBB7BF52C9FD7D000FA5071 /* Double.swift in Sources */,
+				FBBB7C212CA0442500FA5071 /* KMPObservableViewModel.swift in Sources */,
 				FBBB7BD52C9FAA7C00FA5071 /* CustomTabBarView.swift in Sources */,
 				FBBB7BE42C9FCCC700FA5071 /* Color.swift in Sources */,
 				FBBB7BD82C9FC02D00FA5071 /* CoordinatorView.swift in Sources */,
@@ -386,6 +417,7 @@
 				FBBB7BDE2C9FC12B00FA5071 /* SuccessSheetView.swift in Sources */,
 				FBBB7BDB2C9FC07000FA5071 /* AppCoordinator.swift in Sources */,
 				FBBB7BD22C9FA8EF00FA5071 /* TabNames.swift in Sources */,
+				FBBB7C232CA0553800FA5071 /* HomeCoinRankViewModel.swift in Sources */,
 				FBBB7BCC2C9FA83800FA5071 /* HomeCoinRankView.swift in Sources */,
 				FBBB7C062C9FDDC700FA5071 /* View.swift in Sources */,
 				FBBB7BF72C9FD7E300FA5071 /* String.swift in Sources */,
@@ -619,6 +651,22 @@
 				minimumVersion = 1.7.0;
 			};
 		};
+		FBBB7C122CA031F200FA5071 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rickclephas/KMP-NativeCoroutines.git";
+			requirement = {
+				kind = exactVersion;
+				version = "1.0.0-ALPHA-35";
+			};
+		};
+		FBBB7C1B2CA03E7D00FA5071 /* XCRemoteSwiftPackageReference "KMP-ObservableViewModel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rickclephas/KMP-ObservableViewModel";
+			requirement = {
+				kind = exactVersion;
+				version = "1.0.0-BETA-5";
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -641,6 +689,36 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FBBB7C022C9FDD8600FA5071 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
 			productName = SDWebImageSVGCoder;
+		};
+		FBBB7C132CA031F200FA5071 /* KMPNativeCoroutinesAsync */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBBB7C122CA031F200FA5071 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */;
+			productName = KMPNativeCoroutinesAsync;
+		};
+		FBBB7C152CA031F200FA5071 /* KMPNativeCoroutinesCombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBBB7C122CA031F200FA5071 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */;
+			productName = KMPNativeCoroutinesCombine;
+		};
+		FBBB7C172CA031F200FA5071 /* KMPNativeCoroutinesCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBBB7C122CA031F200FA5071 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */;
+			productName = KMPNativeCoroutinesCore;
+		};
+		FBBB7C192CA031F200FA5071 /* KMPNativeCoroutinesRxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBBB7C122CA031F200FA5071 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */;
+			productName = KMPNativeCoroutinesRxSwift;
+		};
+		FBBB7C1C2CA03E7D00FA5071 /* KMPObservableViewModelCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBBB7C1B2CA03E7D00FA5071 /* XCRemoteSwiftPackageReference "KMP-ObservableViewModel" */;
+			productName = KMPObservableViewModelCore;
+		};
+		FBBB7C1E2CA03E7E00FA5071 /* KMPObservableViewModelSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBBB7C1B2CA03E7D00FA5071 /* XCRemoteSwiftPackageReference "KMP-ObservableViewModel" */;
+			productName = KMPObservableViewModelSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
