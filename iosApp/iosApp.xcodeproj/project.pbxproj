@@ -18,6 +18,15 @@
 		FBBB7BD82C9FC02D00FA5071 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BD72C9FC02D00FA5071 /* CoordinatorView.swift */; };
 		FBBB7BDB2C9FC07000FA5071 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BDA2C9FC07000FA5071 /* AppCoordinator.swift */; };
 		FBBB7BDE2C9FC12B00FA5071 /* SuccessSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BDD2C9FC12B00FA5071 /* SuccessSheetView.swift */; };
+		FBBB7BE42C9FCCC700FA5071 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BE32C9FCCC700FA5071 /* Color.swift */; };
+		FBBB7BE62C9FCCFF00FA5071 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BE52C9FCCFF00FA5071 /* Constants.swift */; };
+		FBBB7BE82C9FCD6300FA5071 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BE72C9FCD6300FA5071 /* Image.swift */; };
+		FBBB7BEB2C9FCDE000FA5071 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBBB7BEA2C9FCDE000FA5071 /* Colors.xcassets */; };
+		FBBB7BEE2C9FD65E00FA5071 /* TopRankCoinItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BED2C9FD65E00FA5071 /* TopRankCoinItemView.swift */; };
+		FBBB7BF12C9FD6CC00FA5071 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BF02C9FD6CC00FA5071 /* Fonts.swift */; };
+		FBBB7BF32C9FD7A200FA5071 /* ChangeVolumeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BF22C9FD7A200FA5071 /* ChangeVolumeTextView.swift */; };
+		FBBB7BF52C9FD7D000FA5071 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BF42C9FD7D000FA5071 /* Double.swift */; };
+		FBBB7BF72C9FD7E300FA5071 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BF62C9FD7E300FA5071 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +56,15 @@
 		FBBB7BD72C9FC02D00FA5071 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 		FBBB7BDA2C9FC07000FA5071 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		FBBB7BDD2C9FC12B00FA5071 /* SuccessSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessSheetView.swift; sourceTree = "<group>"; };
+		FBBB7BE32C9FCCC700FA5071 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		FBBB7BE52C9FCCFF00FA5071 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FBBB7BE72C9FCD6300FA5071 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		FBBB7BEA2C9FCDE000FA5071 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		FBBB7BED2C9FD65E00FA5071 /* TopRankCoinItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRankCoinItemView.swift; sourceTree = "<group>"; };
+		FBBB7BF02C9FD6CC00FA5071 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		FBBB7BF22C9FD7A200FA5071 /* ChangeVolumeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeVolumeTextView.swift; sourceTree = "<group>"; };
+		FBBB7BF42C9FD7D000FA5071 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		FBBB7BF62C9FD7E300FA5071 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,12 +106,13 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
-				FBBB7BD02C9FA8DB00FA5071 /* Constants */,
+				FBBB7BEF2C9FD69E00FA5071 /* Utils */,
+				FBBB7BEC2C9FD63A00FA5071 /* ComponentsView */,
 				FBBB7BC52C9FA7B900FA5071 /* CommonViews */,
 				FBBB7BD92C9FC04000FA5071 /* Coordinator */,
 				FBBB7BC42C9FA76A00FA5071 /* Scenes */,
 				FBBB7BD62C9FBFCC00FA5071 /* App */,
-				058557BA273AAA24004C7B11 /* Assets.xcassets */,
+				FBBB7BE92C9FCD9C00FA5071 /* Resource */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
 			);
@@ -154,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				FBBB7BD12C9FA8EF00FA5071 /* TabNames.swift */,
+				FBBB7BE52C9FCCFF00FA5071 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -189,6 +209,53 @@
 				FBBB7BDD2C9FC12B00FA5071 /* SuccessSheetView.swift */,
 			);
 			path = SuccessSheet;
+			sourceTree = "<group>";
+		};
+		FBBB7BE22C9FCCB800FA5071 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FBBB7BE32C9FCCC700FA5071 /* Color.swift */,
+				FBBB7BE72C9FCD6300FA5071 /* Image.swift */,
+				FBBB7BF42C9FD7D000FA5071 /* Double.swift */,
+				FBBB7BF62C9FD7E300FA5071 /* String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FBBB7BE92C9FCD9C00FA5071 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				058557BA273AAA24004C7B11 /* Assets.xcassets */,
+				FBBB7BEA2C9FCDE000FA5071 /* Colors.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		FBBB7BEC2C9FD63A00FA5071 /* ComponentsView */ = {
+			isa = PBXGroup;
+			children = (
+				FBBB7BED2C9FD65E00FA5071 /* TopRankCoinItemView.swift */,
+				FBBB7BF22C9FD7A200FA5071 /* ChangeVolumeTextView.swift */,
+			);
+			path = ComponentsView;
+			sourceTree = "<group>";
+		};
+		FBBB7BEF2C9FD69E00FA5071 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FBBB7BD02C9FA8DB00FA5071 /* Constants */,
+				FBBB7BF82C9FD83B00FA5071 /* Fonts */,
+				FBBB7BE22C9FCCB800FA5071 /* Extension */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FBBB7BF82C9FD83B00FA5071 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FBBB7BF02C9FD6CC00FA5071 /* Fonts.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBBB7BEB2C9FCDE000FA5071 /* Colors.xcassets in Resources */,
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
 			);
@@ -283,15 +351,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBBB7BF12C9FD6CC00FA5071 /* Fonts.swift in Sources */,
+				FBBB7BF32C9FD7A200FA5071 /* ChangeVolumeTextView.swift in Sources */,
+				FBBB7BF52C9FD7D000FA5071 /* Double.swift in Sources */,
 				FBBB7BD52C9FAA7C00FA5071 /* CustomTabBarView.swift in Sources */,
+				FBBB7BE42C9FCCC700FA5071 /* Color.swift in Sources */,
 				FBBB7BD82C9FC02D00FA5071 /* CoordinatorView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				FBBB7BCA2C9FA82D00FA5071 /* ProfileView.swift in Sources */,
+				FBBB7BE82C9FCD6300FA5071 /* Image.swift in Sources */,
+				FBBB7BEE2C9FD65E00FA5071 /* TopRankCoinItemView.swift in Sources */,
 				FBBB7BDE2C9FC12B00FA5071 /* SuccessSheetView.swift in Sources */,
 				FBBB7BDB2C9FC07000FA5071 /* AppCoordinator.swift in Sources */,
 				FBBB7BD22C9FA8EF00FA5071 /* TabNames.swift in Sources */,
 				FBBB7BCC2C9FA83800FA5071 /* HomeCoinRankView.swift in Sources */,
+				FBBB7BF72C9FD7E300FA5071 /* String.swift in Sources */,
 				FBBB7BCF2C9FA87F00FA5071 /* MainRootView.swift in Sources */,
+				FBBB7BE62C9FCCFF00FA5071 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
