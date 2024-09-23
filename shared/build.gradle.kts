@@ -38,14 +38,21 @@ kotlin {
             //put your multiplatform dependencies here
             implementation(libs.kotlinx.coroutines.core)
             api(libs.kmp.observableviewmodel.core)
+            // Ktor
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
         }
 
         androidMain.dependencies {
             implementation(libs.androidx.lifecycle.viewmodel.ktx)
+            // Ktor
+            implementation(libs.ktor.client.android)
         }
 
         iosMain.dependencies {
-
+            // Ktor
+            implementation(libs.ktor.client.darwin)
         }
 
         commonTest.dependencies {

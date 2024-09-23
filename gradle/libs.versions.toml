@@ -11,6 +11,7 @@ kotlinxCoroutinesCore = "1.9.0"
 lifecycleViewmodelKtx = "2.6.2"
 rickclephasKMPNativecoroutines = "1.0.0-ALPHA-35"
 kmp-observableviewmodel = "1.0.0-BETA-5"
+ktorClient = "2.3.5"
 
 [libraries]
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
@@ -27,6 +28,12 @@ androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navig
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 
 kmp-observableviewmodel-core = { group = "com.rickclephas.kmp", name = "kmp-observableviewmodel-core", version.ref = "kmp-observableviewmodel" }
+
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorClient" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorClient" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClient" }
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClient" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktorClient" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
