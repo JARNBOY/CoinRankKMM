@@ -9,15 +9,33 @@ import com.rickclephas.kmp.observableviewmodel.coroutineScope
 import com.rickclephas.kmp.observableviewmodel.ViewModel
 import com.rickclephas.kmp.observableviewmodel.MutableStateFlow
 import com.rickclephas.kmp.observableviewmodel.stateIn
+import io.ktor.client.HttpClient
+import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.client.plugins.defaultRequest
+import io.ktor.client.request.headers
+import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.serialization.json.Json
 
-open class CoinsViewModel: ViewModel() {
+open class CoinsViewModel(
+    private val coinsUseCase: CoinsUseCase
+): ViewModel() {
     private val _coinsState: MutableStateFlow<CoinsState> = MutableStateFlow(viewModelScope, CoinsState())
 
     @NativeCoroutinesState
     val coinsState: StateFlow<CoinsState>  = _coinsState.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), CoinsState())
+
+    fun getCoins() {
+        viewModelScope.coroutineScope.launch {
+            val fetchedCoins = coinsUseCase.getCoins()
+            _coinsState.value = _coinsState.value.copy(coins = fetchedCoins)
+        }
+    }
+
+    // Mock
+    private suspend fun fetchCoins(): List<Coin> = mockCoins
 
     val coinRankOne: Coin = Coin(
         "https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg",
@@ -51,16 +69,6 @@ open class CoinsViewModel: ViewModel() {
         3,
         -0.5 > 0
     )
-
-    fun getCoins() {
-        viewModelScope.coroutineScope.launch {
-            val fetchedCoins = fetchCoins()
-            delay(500)
-            _coinsState.value = _coinsState.value.copy(coins = fetchedCoins) //CoinsState(coins = fetchedCoins)
-        }
-    }
-
-    private suspend fun fetchCoins(): List<Coin> = mockCoins
 
     val mockCoins: List<Coin> = listOf(
         coinRankOne,

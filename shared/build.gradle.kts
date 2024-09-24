@@ -42,6 +42,8 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
+            // Koin
+            implementation(libs.koin.core)
         }
 
         androidMain.dependencies {
@@ -57,6 +59,8 @@ kotlin {
 
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+            // Koin
+            implementation(libs.koin.test)
         }
     }
 }

@@ -44,5 +44,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
     debugImplementation(libs.compose.ui.tooling)
 }

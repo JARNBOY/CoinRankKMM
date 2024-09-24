@@ -15,7 +15,7 @@ struct HomeCoinRankView: View {
     @State private var searchText: String = ""
     @FocusState private var searchTextFieldIsFocused: Bool
     
-    @StateViewModel var viewModel = CoinsViewModel()
+    @StateViewModel var viewModel = CoinsViewModel(coinsUseCase: KoinDependencies().coinsUseCase)
     
     var body: some View {
         ScrollView(.vertical) {

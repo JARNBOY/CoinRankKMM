@@ -40,7 +40,6 @@
 		FBBB7C1D2CA03E7D00FA5071 /* KMPObservableViewModelCore in Frameworks */ = {isa = PBXBuildFile; productRef = FBBB7C1C2CA03E7D00FA5071 /* KMPObservableViewModelCore */; };
 		FBBB7C1F2CA03E7E00FA5071 /* KMPObservableViewModelSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FBBB7C1E2CA03E7E00FA5071 /* KMPObservableViewModelSwiftUI */; };
 		FBBB7C212CA0442500FA5071 /* KMPObservableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7C202CA0442500FA5071 /* KMPObservableViewModel.swift */; };
-		FBBB7C232CA0553800FA5071 /* HomeCoinRankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7C222CA0553800FA5071 /* HomeCoinRankViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,7 +81,6 @@
 		FBBB7C052C9FDDC700FA5071 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		FBBB7C102CA029EC00FA5071 /* CoinItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinItemView.swift; sourceTree = "<group>"; };
 		FBBB7C202CA0442500FA5071 /* KMPObservableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMPObservableViewModel.swift; sourceTree = "<group>"; };
-		FBBB7C222CA0553800FA5071 /* HomeCoinRankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoinRankViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				FBBB7BCB2C9FA83800FA5071 /* HomeCoinRankView.swift */,
-				FBBB7C222CA0553800FA5071 /* HomeCoinRankViewModel.swift */,
 			);
 			path = HomeCoinRank;
 			sourceTree = "<group>";
@@ -417,7 +414,6 @@
 				FBBB7BDE2C9FC12B00FA5071 /* SuccessSheetView.swift in Sources */,
 				FBBB7BDB2C9FC07000FA5071 /* AppCoordinator.swift in Sources */,
 				FBBB7BD22C9FA8EF00FA5071 /* TabNames.swift in Sources */,
-				FBBB7C232CA0553800FA5071 /* HomeCoinRankViewModel.swift in Sources */,
 				FBBB7BCC2C9FA83800FA5071 /* HomeCoinRankView.swift in Sources */,
 				FBBB7C062C9FDDC700FA5071 /* View.swift in Sources */,
 				FBBB7BF72C9FD7E300FA5071 /* String.swift in Sources */,

@@ -1,9 +1,12 @@
 package com.example.coinrankkmm.Coins
 
-class CoinsUseCase(private val service: CoinsService) {
+import com.rickclephas.kmp.nativecoroutines.NativeCoroutines
 
+class CoinsUseCase(private val repository: CoinsRepository) {
+
+    @NativeCoroutines
     suspend fun getCoins(): List<Coin> {
-        val coins = service.fetchCoins()
+        val coins = repository.getCoins()
         return mapCoins(coins)
     }
 
