@@ -7,6 +7,6 @@ import org.koin.dsl.module
 
 val coinsModule = module {
     single<CoinsService> { CoinsService(get()) }
-    single<CoinsUseCase> { CoinsUseCase(get()) }
+    factory { CoinsUseCase(get()) }
     single<CoinsViewModel> { CoinsViewModel(get()) }
 }

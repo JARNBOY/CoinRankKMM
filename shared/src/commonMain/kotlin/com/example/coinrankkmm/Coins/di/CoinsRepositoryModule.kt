@@ -1,5 +1,7 @@
 package com.example.coinrankkmm.Coins.di
 
+import com.example.coinrankkmm.Coins.CoinsRepository
+import com.example.coinrankkmm.Coins.CoinsRepositoryImpl
 import com.example.coinrankkmm.Coins.CoinsService
 import com.example.coinrankkmm.Coins.CoinsUseCase
 import com.example.coinrankkmm.Coins.CoinsViewModel
@@ -29,4 +31,5 @@ val coinsRepositoryModule = module {
             }
         }
     }
+    single<CoinsRepository> { CoinsRepositoryImpl(get()) }
 }
