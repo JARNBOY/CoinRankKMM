@@ -14,11 +14,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.coinrankkmm.Coins.CoinsViewModel
 import com.example.coinrankkmm.Platform
 
 @Composable
-fun AboutScreen(
-) {
+fun AboutScreen() {
     Column {
         Toolbar()
         ContentView()

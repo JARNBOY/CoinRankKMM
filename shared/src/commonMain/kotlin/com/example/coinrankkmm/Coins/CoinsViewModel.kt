@@ -30,7 +30,7 @@ open class CoinsViewModel(
     fun getCoins() {
         viewModelScope.coroutineScope.launch {
             val fetchedCoins = coinsUseCase.getCoins()
-            _coinsState.value = _coinsState.value.copy(coins = fetchedCoins)
+            _coinsState.value = _coinsState.value.copy(coins = fetchedCoins) // _coinsState.value = CoinsState()
         }
     }
 

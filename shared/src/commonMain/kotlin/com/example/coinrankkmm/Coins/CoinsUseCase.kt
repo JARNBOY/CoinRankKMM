@@ -10,9 +10,9 @@ class CoinsUseCase(private val repository: CoinsRepository) {
         return mapCoins(coins)
     }
 
-    private fun mapCoins(coins: List<CoinDetail?>?): List<Coin> {
+    private fun mapCoins(coins: List<CoinDetail>?): List<Coin> {
         return coins?.mapNotNull { coinDetail ->
-            coinDetail?.let {
+            coinDetail.let {
                 Coin(
                     iconUrl = it.iconUrl ?: "",
                     name = it.name ?: "",

@@ -15,9 +15,8 @@ class CoinsService(private val httpClient: HttpClient) {
     private val coinAPIUrl = "api.coinranking.com/v2"
 
     @NativeCoroutines
-    suspend fun fetchCoins(): List<CoinDetail?>? {
-        val response: CoinsResponse = httpClient.get("$baseURL$coinAPIUrl/coins").body()
-        return response.data.coins  // Assuming CoinsResponse has an 'articles' property
+    suspend fun fetchCoins(): List<CoinDetail>? {
+        val response = httpClient.get("$baseURL$coinAPIUrl/coins").body<CoinsResponse>() // https://api.coinranking.com/v2/coins
+        return response.data?.coins
     }
-
 }
