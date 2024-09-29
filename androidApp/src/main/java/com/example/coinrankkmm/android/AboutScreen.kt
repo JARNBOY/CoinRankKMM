@@ -14,8 +14,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.coinrankkmm.Coins.CoinsViewModel
 import com.example.coinrankkmm.Platform
+import org.koin.androidx.viewmodel.dsl.viewModel
 
 @Composable
 fun AboutScreen() {

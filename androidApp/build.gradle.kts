@@ -37,14 +37,23 @@ android {
 }
 
 dependencies {
+//    implementation(projects.shared)
+//    implementation(libs.compose.ui)
+//    implementation(libs.compose.ui.tooling.preview)
+//    implementation(libs.compose.material3)
+//    implementation(libs.androidx.activity.compose)
+//    implementation(libs.coil.compose)
+//    implementation(libs.androidx.navigation.compose)
+//    implementation(libs.androidx.navigation.runtime.ktx)
+//    implementation(libs.koin.android)
+//    implementation(libs.koin.androidx.compose)
+//    debugImplementation(libs.compose.ui.tooling)
     implementation(projects.shared)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.kotlinx.coroutines.core)
     implementation(libs.koin.android)
-    implementation(libs.koin.androidx.compose)
     debugImplementation(libs.compose.ui.tooling)
 }
