@@ -7,7 +7,7 @@ import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.request.headers
 import io.ktor.client.request.get
 
-val apiKey = "coinranking3f6c356c9d53d550ea8edbcf66a33cb3c0263af1db8754ad"
+const val apiKey = "coinranking3f6c356c9d53d550ea8edbcf66a33cb3c0263af1db8754ad"
 
 
 class CoinsService(private val httpClient: HttpClient) {

@@ -34,7 +34,6 @@ kotlin {
             languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
             languageSettings.optIn("kotlinx.cinterop.ExperimentalForeignApi")
         }
-
         commonMain.dependencies {
             //put your multiplatform dependencies here
             implementation(libs.kotlinx.coroutines.core)
@@ -46,22 +45,18 @@ kotlin {
             // Koin
             implementation(libs.koin.core)
         }
-
-        androidMain.dependencies {
-            implementation(libs.androidx.lifecycle.viewmodel.ktx)
-            // Ktor
-            implementation(libs.ktor.client.android)
-        }
-
-        iosMain.dependencies {
-            // Ktor
-            implementation(libs.ktor.client.darwin)
-        }
-
         commonTest.dependencies {
             implementation(libs.kotlin.test)
             // Koin
             implementation(libs.koin.test)
+        }
+        androidMain.dependencies {
+            // Ktor
+            implementation(libs.ktor.client.okhttp)
+        }
+        iosMain.dependencies {
+            // Ktor
+            implementation(libs.ktor.client.darwin)
         }
     }
 }
