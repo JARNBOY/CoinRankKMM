@@ -1,5 +1,6 @@
-package com.example.coinrankkmm.coins
+package com.example.coinrankkmm.coins.presentation
 
+import com.example.coinrankkmm.coins.domain.usecase.CoinsUseCase
 import com.rickclephas.kmp.nativecoroutines.NativeCoroutinesState
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.MutableStateFlow

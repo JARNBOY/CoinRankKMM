@@ -1,5 +1,8 @@
-package com.example.coinrankkmm.coins
+package com.example.coinrankkmm.coins.domain.usecase
 
+import com.example.coinrankkmm.coins.domain.repository.CoinsRepository
+import com.example.coinrankkmm.coins.data.CoinDetail
+import com.example.coinrankkmm.coins.presentation.Coin
 import com.rickclephas.kmp.nativecoroutines.NativeCoroutines
 
 class CoinsUseCase(private val repository: CoinsRepository) {

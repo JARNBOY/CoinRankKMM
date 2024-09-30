@@ -1,11 +1,11 @@
 package com.example.coinrankkmm.di
 
-import com.example.coinrankkmm.coins.CoinsRepository
-import com.example.coinrankkmm.coins.CoinsRepositoryImpl
-import com.example.coinrankkmm.coins.CoinsService
-import com.example.coinrankkmm.coins.CoinsUseCase
-import com.example.coinrankkmm.coins.CoinsViewModel
-import com.example.coinrankkmm.coins.apiKey
+import com.example.coinrankkmm.coins.domain.repository.CoinsRepository
+import com.example.coinrankkmm.coins.domain.repository.CoinsRepositoryImpl
+import com.example.coinrankkmm.coins.domain.services.CoinsService
+import com.example.coinrankkmm.coins.domain.usecase.CoinsUseCase
+import com.example.coinrankkmm.coins.presentation.CoinsViewModel
+import com.example.coinrankkmm.coins.domain.services.apiKey
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest

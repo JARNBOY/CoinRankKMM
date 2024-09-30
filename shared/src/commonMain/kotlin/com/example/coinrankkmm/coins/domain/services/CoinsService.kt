@@ -1,5 +1,7 @@
-package com.example.coinrankkmm.coins
+package com.example.coinrankkmm.coins.domain.services
 
+import com.example.coinrankkmm.coins.data.CoinDetail
+import com.example.coinrankkmm.coins.data.CoinsResponse
 import com.rickclephas.kmp.nativecoroutines.NativeCoroutines
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body

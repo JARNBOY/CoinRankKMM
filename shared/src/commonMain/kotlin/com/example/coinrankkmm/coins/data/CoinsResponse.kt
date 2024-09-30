@@ -1,4 +1,4 @@
-package com.example.coinrankkmm.coins
+package com.example.coinrankkmm.coins.data
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName

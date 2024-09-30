@@ -1,6 +1,6 @@
 package com.example.coinrankkmm
 
-import com.example.coinrankkmm.coins.CoinsUseCase
+import com.example.coinrankkmm.coins.domain.usecase.CoinsUseCase
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 

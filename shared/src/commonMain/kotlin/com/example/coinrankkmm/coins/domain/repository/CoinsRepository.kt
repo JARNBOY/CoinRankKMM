@@ -1,5 +1,7 @@
-package com.example.coinrankkmm.coins
+package com.example.coinrankkmm.coins.domain.repository
 
+import com.example.coinrankkmm.coins.domain.services.CoinsService
+import com.example.coinrankkmm.coins.data.CoinDetail
 import com.rickclephas.kmp.nativecoroutines.NativeCoroutines
 
 interface CoinsRepository {

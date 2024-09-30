@@ -1,4 +1,4 @@
-package com.example.coinrankkmm.coins
+package com.example.coinrankkmm.coins.presentation
 
 data class CoinsState (
     val coins: List<Coin> = listOf(),
