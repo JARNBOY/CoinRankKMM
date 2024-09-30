@@ -24,11 +24,18 @@ struct HomeCoinRankView: View {
                 searchView()
                 Divider()
                 
-                // MARK: Top 3 Section View
-                topThreeCoinView()
-                
-                // MARK: CoinList Section View
-                coinListDefaultDisplay()
+                if viewModel.coinsState.loading {
+                    Text("Loading...")
+                    ProgressView()
+                } else if (viewModel.coinsState.error != nil) {
+                    Text("Error : \(viewModel.coinsState.error ?? "")")
+                } else {
+                    // MARK: Top 3 Section View
+                    topThreeCoinView()
+                    
+                    // MARK: CoinList Section View
+                    coinListDefaultDisplay()
+                }
             }
             .padding()
         }
@@ -43,8 +50,8 @@ struct HomeCoinRankView: View {
     private func resetSearch() {
         self.searchText = ""
         self.searchTextFieldIsFocused = false
-//        viewModel.resetSearchCoinsValue()
-//        viewModel.requestCoinListTryAgain()
+        self.viewModel.clearCoins()
+        self.viewModel.getCoins()
     }
 }
 
@@ -139,9 +146,7 @@ extension HomeCoinRankView {
     @ViewBuilder
     private func coinListDefaultDisplay() -> some View {
         // List When Home Normal Display
-        
-//        viewModel.coinsState.coins, viewModel.mockCoins
-        ForEach(viewModel.coinsState.coins, id: \.self) { coin in
+        ForEach(viewModel.coinsState.coins.dropFirst(3), id: \.self) { coin in
             CoinItemView(item: coin) {
                 print("Click open Coin Detail")
 //                        viewModel.requestCoinDetail(uuid: coin.uuid)

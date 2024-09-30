@@ -21,53 +21,30 @@ open class CoinsViewModel(
 
     fun getCoins() {
         viewModelScope.coroutineScope.launch {
-            val fetchedCoins = coinsUseCase.getCoins()
-            _coinsState.value = _coinsState.value.copy(
-                coins = fetchedCoins,
-                topThreeCoins = fetchedCoins.take(3)
-            )
+            _coinsState.value = _coinsState.value.copy(loading = true)
+            val fetchedCoinsResult = coinsUseCase.getCoins()
+            fetchedCoinsResult.onSuccess { fetchedCoins ->
+                _coinsState.value = _coinsState.value.copy(
+                    coins = fetchedCoins,
+                    topThreeCoins = fetchedCoins.take(3),
+                    loading = false
+                )
+            }.onFailure { exception ->
+                _coinsState.value = _coinsState.value.copy(
+                    error = exception.message,
+                    loading = false
+                )
+            }
         }
     }
 
-    // Mock
-//    private suspend fun fetchCoins(): List<Coin> = mockCoins
-
-//    val coinRankOne: Coin = Coin(
-//        "https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg",
-//        "Bitcoin",
-//        "BTC",
-//        68179.45102665898,
-//        1.54,
-//        "Qwsogvtv82FCd",
-//        1,
-//        1.54 > 0
-//    )
-//
-//    var coinRankTwo: Coin = Coin(
-//        "https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg",
-//        "Etherium",
-//        "ETH",
-//        30000.00,
-//        -2.0,
-//        "Qwsogvtv82FCe",
-//        2,
-//        -2 > 0
-//    )
-//
-//    var coinRankThree: Coin = Coin(
-//        "https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg",
-//        "United State Dollar",
-//        "USDT",
-//        1.02,
-//        -0.5,
-//        "Qwsogvtv82FCf",
-//        3,
-//        -0.5 > 0
-//    )
-//
-//    val mockCoins: List<Coin> = listOf(
-//        coinRankOne,
-//        coinRankTwo,
-//        coinRankThree
-//    )
+    fun clearCoins() {
+        viewModelScope.coroutineScope.launch {
+            _coinsState.value = _coinsState.value.copy(
+                coins = listOf(),
+                topThreeCoins = listOf(),
+                loading = false
+            )
+        }
+    }
 }

@@ -8,7 +8,15 @@ data class CoinsResponse(
     @SerialName("status")
     val status: String?,
     @SerialName("data")
-    val data: CoinsData?
+    val data: CoinsData?,
+    @SerialName("error")
+    val error: ErrorResponse? = null
+)
+
+@Serializable
+data class ErrorResponse(
+    @SerialName("message")
+    val message: String?
 )
 
 @Serializable

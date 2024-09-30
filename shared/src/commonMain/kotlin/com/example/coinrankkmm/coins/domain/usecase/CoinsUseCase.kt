@@ -8,9 +8,9 @@ import com.rickclephas.kmp.nativecoroutines.NativeCoroutines
 class CoinsUseCase(private val repository: CoinsRepository) {
 
     @NativeCoroutines
-    suspend fun getCoins(): List<Coin> {
-        val coins = repository.getCoins()
-        return mapCoins(coins)
+    suspend fun getCoins(): Result<List<Coin>> {
+        val coinsResult = repository.getCoins()
+        return coinsResult.map { coins -> mapCoins(coins) }
     }
 
     private fun mapCoins(coins: List<CoinDetail>?): List<Coin> {
