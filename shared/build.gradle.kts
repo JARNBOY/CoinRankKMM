@@ -51,7 +51,9 @@ kotlin {
             implementation(libs.koin.test)
         }
         androidMain.dependencies {
+            implementation(libs.androidx.lifecycle.viewmodel.ktx)
             // Ktor
+            implementation(libs.ktor.client.android)
             implementation(libs.ktor.client.okhttp)
         }
         iosMain.dependencies {
@@ -68,10 +70,10 @@ android {
         minSdk = 29
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 dependencies {
-    implementation(project(":shared"))
+//    implementation(project(":shared"))
 }

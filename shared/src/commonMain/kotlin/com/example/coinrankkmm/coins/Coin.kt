@@ -1,4 +1,4 @@
-package com.example.coinrankkmm.Coins
+package com.example.coinrankkmm.coins
 
 data class Coin (
     val iconUrl: String,

@@ -1,4 +1,4 @@
-package com.example.coinrankkmm.Coins
+package com.example.coinrankkmm.coins
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
@@ -65,18 +65,18 @@ data class CoinDetail(
     val lowVolume: Boolean?,
     @SerialName("coinrankingUrl")
     val coinrankingUrl: String?,
-    @SerialName("volume24h")
-    val volume24h: String?,
+//    @SerialName("volume24h")
+//    val volume24h: String?,
     @SerialName("btcPrice")
     val btcPrice: String?,
     @SerialName("contractAddresses")
     val contractAddresses: List<String?>?,
-    @SerialName("hasContent")
-    val hasContent: Boolean?,
-    @SerialName("notices")
-    val notices: String?,
-    @SerialName("tags")
-    val tags: List<String?>?
+//    @SerialName("hasContent")
+//    val hasContent: Boolean?,
+//    @SerialName("notices")
+//    val notices: String?,
+//    @SerialName("tags")
+//    val tags: List<String?>?
 )
 
 @Serializable
