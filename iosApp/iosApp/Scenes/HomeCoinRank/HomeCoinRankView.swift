@@ -115,18 +115,23 @@ extension HomeCoinRankView {
             }
 
             HStack(spacing: 8) {
-                // Rank One
-                TopRankCoinItemView(item: viewModel.coinRankOne, onClick: {
-//                    viewModel.requestCoinDetail(uuid: coinRankOne.uuid)
-                })
-                // Rank Two
-                TopRankCoinItemView(item: viewModel.coinRankTwo, onClick: {
-//                    viewModel.requestCoinDetail(uuid: coinRankTwo.uuid)
-                })
-                // Rank Three
-                TopRankCoinItemView(item: viewModel.coinRankThree, onClick: {
-//                    viewModel.requestCoinDetail(uuid: coinRankThree.uuid)
-                })
+                if !viewModel.coinsState.topThreeCoins.isEmpty {
+                    // Rank One
+                    let coinRankOne = viewModel.coinsState.topThreeCoins[0]
+                    TopRankCoinItemView(item: coinRankOne, onClick: {
+    //                    viewModel.requestCoinDetail(uuid: coinRankOne.uuid)
+                    })
+                    // Rank Two
+                    let coinRankTwo = viewModel.coinsState.topThreeCoins[1]
+                    TopRankCoinItemView(item: coinRankTwo, onClick: {
+    //                    viewModel.requestCoinDetail(uuid: coinRankTwo.uuid)
+                    })
+                    // Rank Three
+                    let coinRankThree = viewModel.coinsState.topThreeCoins[2]
+                    TopRankCoinItemView(item: coinRankThree, onClick: {
+    //                    viewModel.requestCoinDetail(uuid: coinRankThree.uuid)
+                    })
+                }
             }
         }
     }
