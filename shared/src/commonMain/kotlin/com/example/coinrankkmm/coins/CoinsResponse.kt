@@ -38,45 +38,45 @@ data class CoinStats(
 @Serializable
 data class CoinDetail(
     @SerialName("uuid")
-    val uuid: String?,
+    val uuid: String? = null,
     @SerialName("symbol")
-    val symbol: String?,
+    val symbol: String? = null,
     @SerialName("name")
-    val name: String?,
+    val name: String? = null,
     @SerialName("color")
-    val color: String?,
+    val color: String? = null,
     @SerialName("iconUrl")
-    val iconUrl: String?,
+    val iconUrl: String? = null,
     @SerialName("marketCap")
-    val marketCap: String?,
+    val marketCap: String? = null,
     @SerialName("price")
-    val price: String?,
+    val price: String? = null,
     @SerialName("listedAt")
-    val listedAt: Int?,
+    val listedAt: Int? = null,
     @SerialName("tier")
-    val tier: Int?,
+    val tier: Int? = null,
     @SerialName("change")
-    val change: String?,
+    val change: String? = null,
     @SerialName("rank")
-    val rank: Int?,
+    val rank: Int? = null,
     @SerialName("sparkline")
-    val sparkline: List<String?>?,
+    val sparkline: List<String?>? = null,
     @SerialName("lowVolume")
-    val lowVolume: Boolean?,
+    val lowVolume: Boolean? = null,
     @SerialName("coinrankingUrl")
-    val coinrankingUrl: String?,
-//    @SerialName("volume24h")
-//    val volume24h: String?,
+    val coinrankingUrl: String? = null,
+    @SerialName("volume24h")
+    val volume24h: String? = null,
     @SerialName("btcPrice")
-    val btcPrice: String?,
+    val btcPrice: String? = null,
     @SerialName("contractAddresses")
-    val contractAddresses: List<String?>?,
-//    @SerialName("hasContent")
-//    val hasContent: Boolean?,
-//    @SerialName("notices")
-//    val notices: String?,
-//    @SerialName("tags")
-//    val tags: List<String?>?
+    val contractAddresses: List<String?>? = null,
+    @SerialName("hasContent")
+    val hasContent: Boolean? = null,
+    @SerialName("notices")
+    val notices: String? = null,
+    @SerialName("tags")
+    val tags: List<String?>? = null
 )
 
 @Serializable
