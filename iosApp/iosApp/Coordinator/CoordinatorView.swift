@@ -13,7 +13,7 @@ struct CoordinatorView: View {
     @StateObject private var coordinator = AppCoordinator()
     
     var body: some View {
-        NavigationStack(path: $coordinator.path) {
+        NavigationStack(path: $coordinator.stackPaths) {
             coordinator.build(screen: .mainRoot)
                 .navigationDestination(for: Screen.self) { screen in
                     coordinator.build(screen: screen)

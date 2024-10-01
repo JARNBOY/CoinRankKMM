@@ -1,30 +1,29 @@
 //
-//  ProfileView.swift
+//  LoopNavigateTestCView.swift
 //  iosApp
 //
-//  Created by Papon Supamongkonchai on 22/9/2567 BE.
+//  Created by Papon Supamongkonchai on 1/10/2567 BE.
 //  Copyright © 2567 BE orgName. All rights reserved.
 //
 
 import SwiftUI
 
-struct ProfileView: View {
+struct LoopNavigateTestCView: View {
     @EnvironmentObject private var coordinator: AppCoordinator
     
     var body: some View {
         VStack {
-            Text("ProfileView")
+            Text("LoopNavigateTest C View")
             
             Button {
-                coordinator.push(.loopNavTestA)
+                coordinator.push(.loopNavTestD)
             } label: {
-                Text("Test PopTo like unwind Segue")
+                Text("Push D View ")
             }
         }
-        
     }
 }
 
 #Preview {
-    ProfileView()
+    LoopNavigateTestCView()
 }

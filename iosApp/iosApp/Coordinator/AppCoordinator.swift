@@ -13,6 +13,10 @@ import shared
 enum Screen: Identifiable, Hashable {
     case mainRoot
     case noteCoinView
+    case loopNavTestA
+    case loopNavTestB
+    case loopNavTestC
+    case loopNavTestD
     
     var id: String {
         switch self {
@@ -20,6 +24,14 @@ enum Screen: Identifiable, Hashable {
             return "mainRootView"
         case .noteCoinView:
             return "noteCoinView"
+        case .loopNavTestA:
+            return "loopNavTestAiew"
+        case .loopNavTestB:
+            return "nloopNavTestBView"
+        case .loopNavTestC:
+            return "loopNavTestCiew"
+        case .loopNavTestD:
+            return "loopNavTestDView"
         }
     }
 }
@@ -96,12 +108,13 @@ protocol AppCoordinatorProtocol: ObservableObject {
 }
 
 final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
-    @Published var path = NavigationPath()
+//    @Published var path = NavigationPath()
+    @Published var stackPaths = [Screen]()
     @Published var sheet: Sheet?
     @Published var fullScreenOver: FullScreenOver?
     
     func push(_ screen:  Screen) {
-        path.append(screen)
+        stackPaths.append(screen)
     }
     
     func present(sheet: Sheet) {
@@ -121,11 +134,23 @@ final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
     }
     
     func pop() {
-        path.removeLast()
+//        path.removeLast()
+        stackPaths.removeLast()
+    }
+    
+    func popTo(screen: Screen) {
+        if let indexPathPop = stackPaths.firstIndex(where: { $0 == screen }) {
+            let popToIndex = (stackPaths.count - 1) - indexPathPop
+            stackPaths.removeLast(popToIndex)
+        } else {
+            // Handle the case where the screen is not found
+            print("Screen not found in stackPaths")
+        }
     }
     
     func popToRoot() {
-        path.removeLast(path.count - 1) // path.count - 1 is not pop to SplashScreen
+        stackPaths.removeLast(stackPaths.count)
+//        path.removeLast(path.count - 1) // path.count - 1 is not pop to SplashScreen
     }
     
     func dismissSheet() {
@@ -143,6 +168,14 @@ final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
             MainRootView()
         case .noteCoinView:
             NoteCoinView()
+        case .loopNavTestA:
+            LoopNavigateTestAView()
+        case .loopNavTestB:
+            LoopNavigateTestBView()
+        case .loopNavTestC:
+            LoopNavigateTestCView()
+        case .loopNavTestD:
+            LoopNavigateTestDView()
         }
     }
     
