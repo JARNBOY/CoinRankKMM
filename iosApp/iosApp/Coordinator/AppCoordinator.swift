@@ -8,25 +8,32 @@
 
 import Foundation
 import SwiftUI
+import shared
 
 enum Screen: Identifiable, Hashable {
     case mainRoot
+    case noteCoinView
     
     var id: String {
         switch self {
         case .mainRoot:
             return "mainRootView"
+        case .noteCoinView:
+            return "noteCoinView"
         }
     }
 }
 
 enum Sheet: Identifiable, Hashable {
     case success(onDismiss: (() -> Void)?)
+    case coinDetail(coin: Coin)
 
     var id: String {
         switch self {
         case .success:
-            return "success"
+            return "successSheetView"
+        case .coinDetail:
+            return "coinDetailSheetView"
         }
     }
 
@@ -34,6 +41,8 @@ enum Sheet: Identifiable, Hashable {
     func hash(into hasher: inout Hasher) {
         switch self {
         case .success:
+            hasher.combine(0)
+        case .coinDetail:
             hasher.combine(0)
         }
     }
@@ -54,7 +63,7 @@ enum FullScreenOver: Identifiable, Hashable {
     var id: String {
         switch self {
         case .success:
-            return "success"
+            return "successFullScreenView"
         }
     }
 
@@ -99,6 +108,8 @@ final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
         switch sheet {
         case .success(let onDismiss):
             self.sheet = .success(onDismiss: onDismiss)
+        case .coinDetail(let coin):
+            self.sheet = .coinDetail(coin: coin)
         }
     }
     
@@ -130,6 +141,8 @@ final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
         switch screen {
         case .mainRoot:
             MainRootView()
+        case .noteCoinView:
+            NoteCoinView()
         }
     }
     
@@ -138,6 +151,8 @@ final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
         switch sheet {
         case .success(let onDismiss):
             SuccessSheetView(onDismiss: onDismiss)
+        case .coinDetail(let coin):
+            CoinDetailView(detailCoin: coin)
         }
     }
     

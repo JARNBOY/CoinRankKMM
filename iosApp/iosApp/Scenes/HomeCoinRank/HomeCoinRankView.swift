@@ -13,8 +13,10 @@ import KMPObservableViewModelSwiftUI
 
 struct HomeCoinRankView: View {
     @State private var searchText: String = ""
+    @State private var isShowTopThree: Bool = true
     @FocusState private var searchTextFieldIsFocused: Bool
     
+    @EnvironmentObject private var coordinator: AppCoordinator
     @StateViewModel var viewModel = CoinsViewModel(coinsUseCase: KoinDependencies().coinsUseCase)
     
     var body: some View {
@@ -52,6 +54,11 @@ struct HomeCoinRankView: View {
         self.searchTextFieldIsFocused = false
         self.viewModel.clearCoins()
         self.viewModel.getCoins()
+    }
+    
+    func sheetCoinDetail(coin: Coin) {
+        viewModel.selectedCoin(coin: coin)
+        coordinator.present(sheet: .coinDetail(coin: viewModel.coinsState.selectedCoin))
     }
 }
 
@@ -119,25 +126,33 @@ extension HomeCoinRankView {
                     .font(CoinFont.Style.robotoMedium.swiftUIFont(16))
                     .foregroundColor(Color(colorName: .black))
                 Spacer()
+                Button {
+                    isShowTopThree = !isShowTopThree
+                } label: {
+                    Text(isShowTopThree ? "hide" : "show")
+                }
+
             }
 
-            HStack(spacing: 8) {
-                if !viewModel.coinsState.topThreeCoins.isEmpty {
-                    // Rank One
-                    let coinRankOne = viewModel.coinsState.topThreeCoins[0]
-                    TopRankCoinItemView(item: coinRankOne, onClick: {
-    //                    viewModel.requestCoinDetail(uuid: coinRankOne.uuid)
-                    })
-                    // Rank Two
-                    let coinRankTwo = viewModel.coinsState.topThreeCoins[1]
-                    TopRankCoinItemView(item: coinRankTwo, onClick: {
-    //                    viewModel.requestCoinDetail(uuid: coinRankTwo.uuid)
-                    })
-                    // Rank Three
-                    let coinRankThree = viewModel.coinsState.topThreeCoins[2]
-                    TopRankCoinItemView(item: coinRankThree, onClick: {
-    //                    viewModel.requestCoinDetail(uuid: coinRankThree.uuid)
-                    })
+            if isShowTopThree {
+                HStack(spacing: 8) {
+                    if !viewModel.coinsState.topThreeCoins.isEmpty {
+                        // Rank One
+                        let coinRankOne = viewModel.coinsState.topThreeCoins[0]
+                        TopRankCoinItemView(item: coinRankOne, onClick: {
+                            sheetCoinDetail(coin: coinRankOne)
+                        })
+                        // Rank Two
+                        let coinRankTwo = viewModel.coinsState.topThreeCoins[1]
+                        TopRankCoinItemView(item: coinRankTwo, onClick: {
+                            sheetCoinDetail(coin: coinRankTwo)
+                        })
+                        // Rank Three
+                        let coinRankThree = viewModel.coinsState.topThreeCoins[2]
+                        TopRankCoinItemView(item: coinRankThree, onClick: {
+                            sheetCoinDetail(coin: coinRankThree)
+                        })
+                    }
                 }
             }
         }
@@ -146,10 +161,11 @@ extension HomeCoinRankView {
     @ViewBuilder
     private func coinListDefaultDisplay() -> some View {
         // List When Home Normal Display
-        ForEach(viewModel.coinsState.coins.dropFirst(3), id: \.self) { coin in
+        let coinsList = isShowTopThree ? Array(viewModel.coinsState.coins.dropFirst(3)) : viewModel.coinsState.coins
+        ForEach(coinsList, id: \.self) { coin in
             CoinItemView(item: coin) {
                 print("Click open Coin Detail")
-//                        viewModel.requestCoinDetail(uuid: coin.uuid)
+                sheetCoinDetail(coin: coin)
             }
             .id(coin.uuid)
         }

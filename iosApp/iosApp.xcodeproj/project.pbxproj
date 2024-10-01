@@ -10,6 +10,9 @@
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		FB9B8E512CABCFB0007FF1FB /* NoteCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B8E502CABCFB0007FF1FB /* NoteCoinView.swift */; };
+		FB9B8E532CABCFD2007FF1FB /* CoinDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B8E522CABCFD2007FF1FB /* CoinDetailView.swift */; };
+		FB9B8E552CABD1F6007FF1FB /* HTMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B8E542CABD1F6007FF1FB /* HTMLView.swift */; };
 		FBBB7BCA2C9FA82D00FA5071 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BC92C9FA82D00FA5071 /* ProfileView.swift */; };
 		FBBB7BCC2C9FA83800FA5071 /* HomeCoinRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BCB2C9FA83800FA5071 /* HomeCoinRankView.swift */; };
 		FBBB7BCF2C9FA87F00FA5071 /* MainRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BCE2C9FA87F00FA5071 /* MainRootView.swift */; };
@@ -61,6 +64,9 @@
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB9B8E502CABCFB0007FF1FB /* NoteCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCoinView.swift; sourceTree = "<group>"; };
+		FB9B8E522CABCFD2007FF1FB /* CoinDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailView.swift; sourceTree = "<group>"; };
+		FB9B8E542CABD1F6007FF1FB /* HTMLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLView.swift; sourceTree = "<group>"; };
 		FBBB7BC92C9FA82D00FA5071 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FBBB7BCB2C9FA83800FA5071 /* HomeCoinRankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoinRankView.swift; sourceTree = "<group>"; };
 		FBBB7BCE2C9FA87F00FA5071 /* MainRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootView.swift; sourceTree = "<group>"; };
@@ -152,9 +158,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FB9B8E4E2CABCBAC007FF1FB /* CoinDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FB9B8E522CABCFD2007FF1FB /* CoinDetailView.swift */,
+			);
+			path = CoinDetail;
+			sourceTree = "<group>";
+		};
+		FB9B8E4F2CABCFA0007FF1FB /* NoteCoin */ = {
+			isa = PBXGroup;
+			children = (
+				FB9B8E502CABCFB0007FF1FB /* NoteCoinView.swift */,
+			);
+			path = NoteCoin;
+			sourceTree = "<group>";
+		};
 		FBBB7BC42C9FA76A00FA5071 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FB9B8E4F2CABCFA0007FF1FB /* NoteCoin */,
+				FB9B8E4E2CABCBAC007FF1FB /* CoinDetail */,
 				FBBB7BC62C9FA7EE00FA5071 /* HomeCoinRank */,
 				FBBB7BC72C9FA80500FA5071 /* Profile */,
 				FBBB7BCD2C9FA86300FA5071 /* MainRoot */,
@@ -265,6 +289,7 @@
 				FBBB7BED2C9FD65E00FA5071 /* TopRankCoinItemView.swift */,
 				FBBB7BF22C9FD7A200FA5071 /* ChangeVolumeTextView.swift */,
 				FBBB7C102CA029EC00FA5071 /* CoinItemView.swift */,
+				FB9B8E542CABD1F6007FF1FB /* HTMLView.swift */,
 			);
 			path = ComponentsView;
 			sourceTree = "<group>";
@@ -401,9 +426,12 @@
 			files = (
 				FBBB7BF12C9FD6CC00FA5071 /* Fonts.swift in Sources */,
 				FBBB7BF32C9FD7A200FA5071 /* ChangeVolumeTextView.swift in Sources */,
+				FB9B8E532CABCFD2007FF1FB /* CoinDetailView.swift in Sources */,
 				FBBB7C112CA029EC00FA5071 /* CoinItemView.swift in Sources */,
+				FB9B8E512CABCFB0007FF1FB /* NoteCoinView.swift in Sources */,
 				FBBB7BF52C9FD7D000FA5071 /* Double.swift in Sources */,
 				FBBB7C212CA0442500FA5071 /* KMPObservableViewModel.swift in Sources */,
+				FB9B8E552CABD1F6007FF1FB /* HTMLView.swift in Sources */,
 				FBBB7BD52C9FAA7C00FA5071 /* CustomTabBarView.swift in Sources */,
 				FBBB7BE42C9FCCC700FA5071 /* Color.swift in Sources */,
 				FBBB7BD82C9FC02D00FA5071 /* CoordinatorView.swift in Sources */,

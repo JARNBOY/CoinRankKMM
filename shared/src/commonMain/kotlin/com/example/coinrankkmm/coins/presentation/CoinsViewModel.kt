@@ -43,8 +43,13 @@ open class CoinsViewModel(
             _coinsState.value = _coinsState.value.copy(
                 coins = listOf(),
                 topThreeCoins = listOf(),
+                selectedCoin = Coin(),
                 loading = false
             )
         }
+    }
+
+    fun selectedCoin(coin: Coin) {
+        _coinsState.value.selectedCoin = coin
     }
 }

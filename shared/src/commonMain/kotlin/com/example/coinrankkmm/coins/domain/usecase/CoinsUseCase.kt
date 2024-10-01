@@ -24,7 +24,10 @@ class CoinsUseCase(private val repository: CoinsRepository) {
                     change = it.change?.toDoubleOrNull() ?: 0.0,
                     uuid = it.uuid ?: "",
                     rank = it.rank ?: 0,
-                    isChangePositive = it.change?.toDoubleOrNull() ?: 0.0 > 0
+                    isChangePositive = it.change?.toDoubleOrNull() ?: 0.0 > 0,
+                    websiteUrl = it.websiteUrl ?: "https://bitcoin.org",
+                    hexColor = it.color ?: "",
+                    marketCap = it.marketCap ?: ""
                 )
             }
         } ?: emptyList()

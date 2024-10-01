@@ -84,7 +84,9 @@ data class CoinDetail(
     @SerialName("notices")
     val notices: String? = null,
     @SerialName("tags")
-    val tags: List<String?>? = null
+    val tags: List<String?>? = null,
+    @SerialName("websiteUrl")
+    val websiteUrl: String? = null
 )
 
 @Serializable
