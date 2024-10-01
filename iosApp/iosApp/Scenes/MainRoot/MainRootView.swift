@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MainRootView: View {
-    @State private var selectedTab = PageTab.homeTab
+    @State var selectedTab = PageTab.homeTab
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {

@@ -11,7 +11,7 @@ import SwiftUI
 import shared
 
 enum Screen: Identifiable, Hashable {
-    case mainRoot
+    case mainRoot(selectedTab: PageTab)
     case noteCoinView
     case loopNavTestA
     case loopNavTestB
@@ -112,6 +112,7 @@ final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
     @Published var stackPaths = [Screen]()
     @Published var sheet: Sheet?
     @Published var fullScreenOver: FullScreenOver?
+    @Published var rootView = Screen.mainRoot(selectedTab: .homeTab)
     
     func push(_ screen:  Screen) {
         stackPaths.append(screen)
@@ -134,7 +135,6 @@ final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
     }
     
     func pop() {
-//        path.removeLast()
         stackPaths.removeLast()
     }
     
@@ -150,7 +150,6 @@ final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
     
     func popToRoot() {
         stackPaths.removeLast(stackPaths.count)
-//        path.removeLast(path.count - 1) // path.count - 1 is not pop to SplashScreen
     }
     
     func dismissSheet() {
@@ -161,11 +160,16 @@ final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
         self.fullScreenOver = nil
     }
     
+    func rebuildRootViewStackPath(screen: Screen) {
+        rootView = screen
+        stackPaths = [rootView]
+    }
+    
     @ViewBuilder
     func build(screen: Screen) -> some View {
         switch screen {
-        case .mainRoot:
-            MainRootView()
+        case .mainRoot(let selectedTab):
+            MainRootView(selectedTab: selectedTab)
         case .noteCoinView:
             NoteCoinView()
         case .loopNavTestA:

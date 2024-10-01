@@ -61,3 +61,18 @@ extension String {
         }
     }
 }
+
+extension String {
+    func toScreen() -> Screen {
+        switch self {
+        case "main-screen-home":
+                .mainRoot(selectedTab: .homeTab)
+        case "main-screen-profile":
+                .mainRoot(selectedTab: .profileTab)
+        case "screen-b":
+                .loopNavTestB
+        default:
+                .mainRoot(selectedTab: .homeTab)
+        }
+    }
+}
