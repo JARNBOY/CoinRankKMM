@@ -22,7 +22,8 @@ enum ColorNames: String {
     case bgtopCoin = "#F9F9F9"
     case coinItemBlackText = "#333333"
     case btnOpenWebSiteText = "#38A0FF"
-    case bgInviteFriend = "#C5E6FF"
+    // Profile
+    case bgProfile = "#C5E6FF"
 }
 
 extension Color {

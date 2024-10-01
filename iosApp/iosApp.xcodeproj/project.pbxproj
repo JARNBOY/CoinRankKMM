@@ -18,6 +18,10 @@
 		FB9B8E5E2CABF3E4007FF1FB /* LoopNavigateTestCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B8E5D2CABF3E4007FF1FB /* LoopNavigateTestCView.swift */; };
 		FB9B8E602CABF3F3007FF1FB /* LoopNavigateTestDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B8E5F2CABF3F3007FF1FB /* LoopNavigateTestDView.swift */; };
 		FB9B8E622CAC0E6E007FF1FB /* Deeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B8E612CAC0E6E007FF1FB /* Deeplink.swift */; };
+		FBB215512CAC5674009E6447 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB215502CAC5674009E6447 /* WebView.swift */; };
+		FBB215542CAC5D8B009E6447 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB215532CAC5D8B009E6447 /* TitleView.swift */; };
+		FBB215562CAC6413009E6447 /* CategoryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB215552CAC6413009E6447 /* CategoryGridView.swift */; };
+		FBB215582CAC6437009E6447 /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB215572CAC6437009E6447 /* CategoryItemView.swift */; };
 		FBBB7BCA2C9FA82D00FA5071 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BC92C9FA82D00FA5071 /* ProfileView.swift */; };
 		FBBB7BCC2C9FA83800FA5071 /* HomeCoinRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BCB2C9FA83800FA5071 /* HomeCoinRankView.swift */; };
 		FBBB7BCF2C9FA87F00FA5071 /* MainRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB7BCE2C9FA87F00FA5071 /* MainRootView.swift */; };
@@ -77,6 +81,10 @@
 		FB9B8E5D2CABF3E4007FF1FB /* LoopNavigateTestCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopNavigateTestCView.swift; sourceTree = "<group>"; };
 		FB9B8E5F2CABF3F3007FF1FB /* LoopNavigateTestDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopNavigateTestDView.swift; sourceTree = "<group>"; };
 		FB9B8E612CAC0E6E007FF1FB /* Deeplink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deeplink.swift; sourceTree = "<group>"; };
+		FBB215502CAC5674009E6447 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		FBB215532CAC5D8B009E6447 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		FBB215552CAC6413009E6447 /* CategoryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGridView.swift; sourceTree = "<group>"; };
+		FBB215572CAC6437009E6447 /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
 		FBBB7BC92C9FA82D00FA5071 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FBBB7BCB2C9FA83800FA5071 /* HomeCoinRankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoinRankView.swift; sourceTree = "<group>"; };
 		FBBB7BCE2C9FA87F00FA5071 /* MainRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootView.swift; sourceTree = "<group>"; };
@@ -313,6 +321,10 @@
 				FBBB7BF22C9FD7A200FA5071 /* ChangeVolumeTextView.swift */,
 				FBBB7C102CA029EC00FA5071 /* CoinItemView.swift */,
 				FB9B8E542CABD1F6007FF1FB /* HTMLView.swift */,
+				FBB215502CAC5674009E6447 /* WebView.swift */,
+				FBB215532CAC5D8B009E6447 /* TitleView.swift */,
+				FBB215552CAC6413009E6447 /* CategoryGridView.swift */,
+				FBB215572CAC6437009E6447 /* CategoryItemView.swift */,
 			);
 			path = ComponentsView;
 			sourceTree = "<group>";
@@ -466,15 +478,19 @@
 				FBBB7BE82C9FCD6300FA5071 /* Image.swift in Sources */,
 				FBBB7BEE2C9FD65E00FA5071 /* TopRankCoinItemView.swift in Sources */,
 				FBBB7BDE2C9FC12B00FA5071 /* SuccessSheetView.swift in Sources */,
+				FBB215512CAC5674009E6447 /* WebView.swift in Sources */,
 				FBBB7BDB2C9FC07000FA5071 /* AppCoordinator.swift in Sources */,
 				FBBB7BD22C9FA8EF00FA5071 /* TabNames.swift in Sources */,
 				FBBB7BCC2C9FA83800FA5071 /* HomeCoinRankView.swift in Sources */,
 				FB9B8E5A2CABF3CC007FF1FB /* LoopNavigateTestAView.swift in Sources */,
 				FB9B8E5C2CABF3D7007FF1FB /* LoopNavigateTestBView.swift in Sources */,
+				FBB215582CAC6437009E6447 /* CategoryItemView.swift in Sources */,
 				FBBB7C062C9FDDC700FA5071 /* View.swift in Sources */,
+				FBB215562CAC6413009E6447 /* CategoryGridView.swift in Sources */,
 				FBBB7BF72C9FD7E300FA5071 /* String.swift in Sources */,
 				FBBB7BCF2C9FA87F00FA5071 /* MainRootView.swift in Sources */,
 				FBBB7BE62C9FCCFF00FA5071 /* Constants.swift in Sources */,
+				FBB215542CAC5D8B009E6447 /* TitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

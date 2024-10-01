@@ -39,18 +39,18 @@ struct CoinItemView: View, Equatable {
                         HStack {
                             Text(item.name)
                                 .font(CoinFont.Style.robotoBold.swiftUIFont(16))
-                                .foregroundColor(Color(colorName: .coinItemBlackText))
+                                .foregroundStyle(Color(colorName: .coinItemBlackText))
                                 .lineLimit(1)
                             Spacer(minLength: 8)
                             let priceText = "$\(item.price.toDecimalString(5))"
                             Text(priceText)
                                 .font(CoinFont.Style.robotoBold.swiftUIFont(12))
-                                .foregroundColor(Color(colorName: .coinItemBlackText))
+                                .foregroundStyle(Color(colorName: .coinItemBlackText))
                         }
                         HStack {
                             Text(item.symbol)
                                 .font(CoinFont.Style.robotoBold.swiftUIFont())
-                                .foregroundColor(Color(colorName: .topCoinNameGrayText))
+                                .foregroundStyle(Color(colorName: .topCoinNameGrayText))
                             Spacer()
                             ChangeVolumeTextView(number: item.change, isPositiveChange: item.isChangePositive)
                         }

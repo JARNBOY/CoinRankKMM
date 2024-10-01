@@ -52,11 +52,11 @@ extension CoinDetailView {
                 HStack(spacing: 4) {
                     Text(item.name)
                         .font(CoinFont.Style.robotoBold.swiftUIFont(18))
-                        .foregroundColor(Color(hex: item.hexColor))
+                        .foregroundStyle(Color(hex: item.hexColor))
                         .lineLimit(1)
                     Text("(\(item.symbol))")
                         .font(CoinFont.Style.robotoRegular.swiftUIFont(16))
-                        .foregroundColor(Color(colorName: .black))
+                        .foregroundStyle(Color(colorName: .black))
                         .lineLimit(1)
                     Spacer()
                 }
@@ -64,11 +64,11 @@ extension CoinDetailView {
                 HStack(spacing: 4) {
                     Text("PRICE")
                         .font(CoinFont.Style.robotoBold.swiftUIFont(12))
-                        .foregroundColor(Color(colorName: .coinItemBlackText))
+                        .foregroundStyle(Color(colorName: .coinItemBlackText))
                         .lineLimit(1)
                     Text("$ \(item.price.toDecimalString())")
                         .font(CoinFont.Style.robotoRegular.swiftUIFont(12))
-                        .foregroundColor(Color(colorName: .coinItemBlackText))
+                        .foregroundStyle(Color(colorName: .coinItemBlackText))
                         .lineLimit(1)
                     Spacer()
                 }
@@ -77,11 +77,11 @@ extension CoinDetailView {
                 HStack(spacing: 4) {
                     Text("MARKET CAP")
                         .font(CoinFont.Style.robotoBold.swiftUIFont(12))
-                        .foregroundColor(.black)
+                        .foregroundStyle(.black)
                         .lineLimit(1)
                     Text("$ \(item.marketCap.toMarketCapFormat())")
                         .font(CoinFont.Style.robotoRegular.swiftUIFont(12))
-                        .foregroundColor(.black)
+                        .foregroundStyle(.black)
                         .lineLimit(1)
                     Spacer()
                 }
@@ -104,7 +104,7 @@ extension CoinDetailView {
                     }, label: {
                         Text("GO TO WEBSITE")
                             .font(CoinFont.Style.robotoBold.swiftUIFont())
-                            .foregroundColor(Color(colorName: .btnOpenWebSiteText))
+                            .foregroundStyle(Color(colorName: .btnOpenWebSiteText))
                     })
                 }
             }

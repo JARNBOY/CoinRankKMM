@@ -24,7 +24,7 @@ struct ChangeVolumeTextView: View {
                 .frame(width: 12, height: 12, alignment: .center)
             Text(numberChangeDisplay)
                 .font(CoinFont.Style.robotoBlack.swiftUIFont())
-                .foregroundColor(isPositiveChange
+                .foregroundStyle(isPositiveChange
                                  ? Color(colorName: .topCoinGreenText)
                                  : Color(colorName: .topCoinRedText))
         }

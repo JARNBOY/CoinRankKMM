@@ -118,13 +118,13 @@ extension HomeCoinRankView {
             HStack {
                 Text("Top")
                     .font(CoinFont.Style.robotoBold.swiftUIFont(16))
-                    .foregroundColor(Color(colorName: .black))
+                    .foregroundStyle(Color(colorName: .black))
                 Text("\(numberTopCoin)")
                     .font(CoinFont.Style.robotoBold.swiftUIFont(16))
-                    .foregroundColor(Color(colorName: .red))
+                    .foregroundStyle(Color(colorName: .red))
                 Text("rank crypto")
                     .font(CoinFont.Style.robotoMedium.swiftUIFont(16))
-                    .foregroundColor(Color(colorName: .black))
+                    .foregroundStyle(Color(colorName: .black))
                 Spacer()
                 Button {
                     isShowTopThree = !isShowTopThree

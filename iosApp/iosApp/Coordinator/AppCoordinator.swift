@@ -39,6 +39,7 @@ enum Screen: Identifiable, Hashable {
 enum Sheet: Identifiable, Hashable {
     case success(onDismiss: (() -> Void)?)
     case coinDetail(coin: Coin)
+    case webView(url: String)
 
     var id: String {
         switch self {
@@ -46,6 +47,8 @@ enum Sheet: Identifiable, Hashable {
             return "successSheetView"
         case .coinDetail:
             return "coinDetailSheetView"
+        case .webView:
+            return "webSheetView"
         }
     }
 
@@ -55,6 +58,8 @@ enum Sheet: Identifiable, Hashable {
         case .success:
             hasher.combine(0)
         case .coinDetail:
+            hasher.combine(0)
+        case .webView:
             hasher.combine(0)
         }
     }
@@ -121,6 +126,8 @@ final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
             self.sheet = .success(onDismiss: onDismiss)
         case .coinDetail(let coin):
             self.sheet = .coinDetail(coin: coin)
+        case .webView(let url):
+            self.sheet = .webView(url: url)
         }
     }
     
@@ -186,6 +193,8 @@ final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
             SuccessSheetView(onDismiss: onDismiss)
         case .coinDetail(let coin):
             CoinDetailView(detailCoin: coin)
+        case .webView(let url):
+            WebView(url: URL(string: url)!)
         }
     }
     

@@ -18,6 +18,7 @@ enum ImageNames: String {
     case loadingIcon = "loading_icon"
     case pullToRefreshIcon = "pull_to_refresh"
     case giftIcon = "gift_icon"
+    case myProfileImage = "my_profile_image"
 }
 
 extension Image {
