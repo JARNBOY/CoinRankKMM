@@ -91,8 +91,6 @@ enum FullScreenOver: Identifiable, Hashable {
         switch (lhs, rhs) {
         case (.success, .success):
             return true
-        default:
-            return false
         }
     }
 }
@@ -108,11 +106,10 @@ protocol AppCoordinatorProtocol: ObservableObject {
 }
 
 final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
-//    @Published var path = NavigationPath()
     @Published var stackPaths = [Screen]()
     @Published var sheet: Sheet?
     @Published var fullScreenOver: FullScreenOver?
-    @Published var rootView = Screen.mainRoot(selectedTab: .homeTab)
+    @Published var rootTabSelected: PageTab = .homeTab
     
     func push(_ screen:  Screen) {
         stackPaths.append(screen)
@@ -160,9 +157,8 @@ final class AppCoordinator: ObservableObject, AppCoordinatorProtocol {
         self.fullScreenOver = nil
     }
     
-    func rebuildRootViewStackPath(screen: Screen) {
-        rootView = screen
-        stackPaths = [rootView]
+    func rebuildTabRootNotify(selectedTab: PageTab) {
+        rootTabSelected = selectedTab
     }
     
     @ViewBuilder

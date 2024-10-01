@@ -12,10 +12,11 @@ struct CoordinatorView: View {
     
     @StateObject private var coordinator = AppCoordinator()
     private let deeplink: Deeplink = Deeplink.shared
+    private var rootView: Screen = .mainRoot(selectedTab: .homeTab)
     
     var body: some View {
         NavigationStack(path: $coordinator.stackPaths) {
-            coordinator.build(screen: coordinator.rootView)
+            coordinator.build(screen: rootView)
                 .navigationDestination(for: Screen.self) { screen in
                     coordinator.build(screen: screen)
                 }
@@ -32,7 +33,7 @@ struct CoordinatorView: View {
             if let screen = deeplink.handleIncomingURL(incomingURL) {
                 switch screen {
                 case .mainRoot(let selectedTab):
-                    coordinator.rebuildRootViewStackPath(screen: .mainRoot(selectedTab: selectedTab))
+                    coordinator.rebuildTabRootNotify(selectedTab: selectedTab)
                 default:
                     coordinator.push(screen)
                 }

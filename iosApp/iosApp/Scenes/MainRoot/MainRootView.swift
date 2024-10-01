@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct MainRootView: View {
+    @EnvironmentObject private var coordinator: AppCoordinator
     @State var selectedTab = PageTab.homeTab
     
     var body: some View {
@@ -20,7 +21,7 @@ struct MainRootView: View {
                     .tag(PageTab.profileTab)
             }
             
-            CustomTabBarView(selectedTab: selectedTab) { index in
+            CustomTabBarView(selectedTab: $selectedTab) { index in
                 switch index {
                 case .indexHomeTab:
                     selectedTab = PageTab.homeTab
@@ -30,6 +31,9 @@ struct MainRootView: View {
                     selectedTab = PageTab.profileTab
                 }
             }
+        }
+        .onReceive(coordinator.$rootTabSelected) { tab in
+            selectedTab = tab
         }
     }
 }

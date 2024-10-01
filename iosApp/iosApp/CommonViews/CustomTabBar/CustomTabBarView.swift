@@ -12,7 +12,7 @@ struct CustomTabBarView: View {
     private let tabs: [PageTab] = [.homeTab,
                                    .centerTab,
                                    .profileTab] // home , button center, profile
-    @State var selectedTab: PageTab = .homeTab
+    @Binding var selectedTab: PageTab
     
     var selectedIndex: ((IndexPageTab) -> ())?
     
@@ -103,7 +103,7 @@ struct CustomTabBarView: View {
     ZStack(alignment: .bottom) {
         Color.gray.opacity(0.2)
             .ignoresSafeArea()
-        CustomTabBarView { index in
+        CustomTabBarView(selectedTab: .constant(PageTab.homeTab)) { index in
             print("CustomTabBarView index \(index)")
         }
     }
