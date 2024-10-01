@@ -20,7 +20,7 @@ struct MainRootView: View {
                     .tag(PageTab.profileTab)
             }
             
-            CustomTabBarView { index in
+            CustomTabBarView(selectedTab: selectedTab) { index in
                 switch index {
                 case .indexHomeTab:
                     selectedTab = PageTab.homeTab

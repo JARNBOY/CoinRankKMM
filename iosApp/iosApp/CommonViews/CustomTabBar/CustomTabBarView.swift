@@ -12,7 +12,7 @@ struct CustomTabBarView: View {
     private let tabs: [PageTab] = [.homeTab,
                                    .centerTab,
                                    .profileTab] // home , button center, profile
-    @State private var selectedTab: PageTab = .homeTab
+    @State var selectedTab: PageTab = .homeTab
     
     var selectedIndex: ((IndexPageTab) -> ())?
     
