@@ -12,6 +12,7 @@ import SwiftUI
 enum ColorNames: String {
     // Home
     case black = "#000000"
+    case black30 = "#1E1E1E"
     case white = "#FFFFFF"
     case red = "#FF0000"
     case bgSearch = "#EEEEEE"

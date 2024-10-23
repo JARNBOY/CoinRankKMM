@@ -19,6 +19,7 @@ struct TitleView: View {
             Text(title)
                 .font(.title)
                 .fontWeight(.heavy)
+                .foregroundStyle(.white)
             
             Spacer()
         } //: HSTACK
@@ -29,6 +30,5 @@ struct TitleView: View {
 }
 #Preview {
     TitleView(title: "Profile")
-      .previewLayout(.sizeThatFits)
-      .background(Color(colorName: .bgProfile))
+      .background(Color(colorName: .black30))
 }

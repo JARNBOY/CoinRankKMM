@@ -13,26 +13,35 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
-            Text("Profile")
-              .font(.largeTitle)
-              .fontWeight(.heavy)
-            
-            headerProfile()
-                        
-            TitleView(title: "Menu Test")
-            
-            CategoryMenuTestGridView()
-            
-            TitleView(title: "My Github")
-            
-            Button {
-                coordinator.present(sheet: .webView(url: "https://github.com/JARNBOY"))
-            } label: {
-                WebView(url: URL(string: "https://github.com/JARNBOY")!)
+            HStack {
+                Spacer()
+                Text("Profile")
+                  .font(.largeTitle)
+                  .fontWeight(.heavy)
+                  .foregroundStyle(.white)
+                Spacer()
             }
+            .padding(.vertical, 16)
+            .background(Color(colorName: .black))
             
+            ScrollView {
+                headerProfile()
+                            
+                TitleView(title: "Menu Test")
+                
+                CategoryMenuTestGridView()
+                
+                TitleView(title: "My Github")
+                
+                Button {
+                    coordinator.present(sheet: .webView(url: "https://github.com/JARNBOY"))
+                } label: {
+                    WebView(url: URL(string: "https://github.com/JARNBOY")!)
+                        .frame(height: heightDevice * 0.5)
+                }
+            }
         }
-        .background(Color(colorName: .white))
+        .background(Color(colorName: .black30))
     }
     
     @ViewBuilder
@@ -51,6 +60,7 @@ struct ProfileView: View {
                     )
                 
                 Text("This app is Demo for POC KMP")
+                    .foregroundStyle(.white)
             }
             
             
