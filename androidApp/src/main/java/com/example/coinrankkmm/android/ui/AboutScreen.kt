@@ -1,4 +1,4 @@
-package com.example.coinrankkmm.android
+package com.example.coinrankkmm.android.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
