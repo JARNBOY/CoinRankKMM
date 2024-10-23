@@ -32,6 +32,7 @@ struct MainRootView: View {
                 }
             }
         }
+        .ignoresSafeArea(.keyboard)
         .onReceive(coordinator.$rootTabSelected) { tab in
             selectedTab = tab
         }
